@@ -88,12 +88,7 @@ const verifyToken = (req, res, next) => {
     }
 };
 
-
-/**
- * Health Route: This endpoint is designed to provide a health check for the Mail Service.
- * It returns a JSON response indicating the operational status, success, and a message
- * confirming the Mail Service's availability.
- */
+// Health Route to check if service is running
 app.get('/', (req, res) => {
     return res.status(200).json({
         success: true,
@@ -104,12 +99,12 @@ app.get('/', (req, res) => {
 // Endpoint to send email
 app.post('/sendmail', verifyToken, async (req, res) => {
     try {
-        const {mail_recipient, mail_subject, mail_text} = req.body;
+        const {mailRecipient, mailSubject, mailText} = req.body;
         const msg = {
-            to: mail_recipient,
+            to: mailRecipient,
             from: process.env.SENDER,
-            subject: mail_subject,
-            text: mail_text,
+            subject: mailSubject,
+            text: mailText,
         };
         await sendgrid.send(msg)
         return res.status(200).json({
