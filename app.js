@@ -44,6 +44,7 @@ app.use(express.json());
 // Configuring Cross-Origin Resource Sharing (CORS) middleware with credentials and origin options.
 // credentials flag allows the client to send the session info in the header
 // origin flag allows the server to reflect (enable) the requested origin in the CORS response
+// this is a low security origin flag, should be changed in production
 app.use(cors({credentials: true, origin: true}))
 
 // Custom Morgan token to log the request body as a JSON string.
