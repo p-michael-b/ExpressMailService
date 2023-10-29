@@ -4,7 +4,10 @@ Minimalistic Express Mail Microservice Using Sendgrid API and JWT authentication
 In order for this to work you must set up a SendGrid account and get the API key for it.
 Also, you must set the environment variables in the .env file accordingly
 
-all required to do is clone the repository and run
+all required to rund the mail service on PORT specified in .env is to clone the repository and run
+```javascript
+npm install
+```
 
 
 The caller of the microservice should look something like this:
@@ -32,7 +35,6 @@ const sendMail = async (mailRecipient, mailSubject, mailText) => {
         // Handle network errors or other exceptions here        
     }
 }
-
 ```
 and have the same JWT_SECRET implemented in the .env file.
 
