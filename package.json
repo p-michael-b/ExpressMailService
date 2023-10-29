@@ -1,5 +1,5 @@
 {
-  "name": "goats_server",
+  "name": "ExpressMailService",
   "version": "1.0.0",
   "description": "Minimalistic Express mail service using SendGrid and JWT",
   "main": "app.js",
